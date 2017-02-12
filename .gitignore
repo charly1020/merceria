@@ -1,0 +1,12 @@
+#intelij
+.idea/
+*.iml
+
+#maven
+target
+
+#node
+**/node/
+**/node_modules/
+
+
