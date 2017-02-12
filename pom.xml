@@ -9,19 +9,21 @@
 	<version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>parent</name>
+  <name>merceria</name>
   <description>The ng2 boost project</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.1.RELEASE</version>
+    <relativePath/>
 	</parent>
 
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <start-class>com.programmingfree.springservice.Application</start-class>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <!--start-class>Application</start-class-->
     <java.version>1.8</java.version>
   </properties>
 
