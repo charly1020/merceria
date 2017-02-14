@@ -1,4 +1,4 @@
-package com.river.merceria;
+package org.river.merceria;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
