@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8"></meta>
+        <meta charset="UTF-8"/>
         <title>Title</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
@@ -42,10 +42,13 @@
             <input style="margin-left: 23px;" type="text"/>
         </div>
         -->
-        <div class="form-group col-xs-4 col-md-offset-4">
-            <label for="name">Name:</label>
-            <input type="text" class="form-control " id="Name"/>
-        </div>
+        <form method="POST" action="article">
+            <div class="form-group col-xs-4 col-md-offset-4">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="Name" name="name"/>
+            </div>
+            <input type="submit">Guardar</input>
+        </form>
 
         <div class="form-group col-xs-4 col-md-offset-4">
             <label for="Descripcion">Descripcion:</label>
@@ -54,7 +57,7 @@
 
         <div class="form-group col-xs-4 col-md-offset-4">
             <label for="Precio">Precio:</label>
-            <input type="text" class="form-control" id="Precio"/>
+            <input type="text" class="form-control" id="Precio">Guarda</input>
         </div>
 
         <div class="row">
@@ -67,6 +70,9 @@
             </div>
         </div>
        <!-- 1 2 3 4 5 6 7 8 9 10 11 12-->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+                crossorigin="anonymous"></script>
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
