@@ -2,6 +2,8 @@ package org.river.merceria;
 
 import org.river.merceria.model.Article;
 
+import org.river.merceria.repository.ArticleRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 public class PruebaController {
 
+    @Autowired
+    private ArticleRepository repository;
+
     @RequestMapping("/greeting")
     public String greeting(@RequestParam(value="name", defaultValue="World") String name) {
         return "index";
@@ -23,6 +28,10 @@ public class PruebaController {
 
     @PostMapping("/article")
     public String articleSubmit(@ModelAttribute Article article) {
+
+        repository.save( article );
+
+
         return "result";
     }
 }
