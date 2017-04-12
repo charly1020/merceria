@@ -28,16 +28,14 @@ public class Article {
         this.name = name;
     }
 
-    public  String getName() {
-        return this.name();
-    }
-    
+    public  String getName() {return this.name; }
+
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 
-    public  String getDescripcion() { return this.descripcion(); }
+    public  String getDescripcion() { return this.descripcion; }
 
     @Override
     public String toString() {
