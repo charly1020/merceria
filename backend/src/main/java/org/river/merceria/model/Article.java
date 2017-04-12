@@ -15,6 +15,7 @@ public class Article {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String descripcion;
 
     //This constructor is for the sake of JPA
     protected Article() {}
@@ -28,11 +29,19 @@ public class Article {
     }
 
     public  String getName() {
-        return this.name;
+        return this.name();
     }
+    
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public  String getDescripcion() { return this.descripcion(); }
 
     @Override
     public String toString() {
-        return String.format( "Article[id=%d, name='%s]", this.id, this.name );
+        return String.format( "Article[id=%d, name='%s]", this.id, this.name , this.descripcion);
+
     }
 }

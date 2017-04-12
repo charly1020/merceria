@@ -21,9 +21,9 @@ public class Application {
     public CommandLineRunner demo(ArticleRepository repository) {
 
         return ( args ) -> {
-            repository.save( new Article("Aguja"));
-            repository.save( new Article("Hilo"));
-            repository.save( new Article("Tijera"));
+            //repository.save( new Article("Aguja"));
+            //repository.save( new Article("Hilo"));
+            //repository.save( new Article("Tijera"));
 
 
         };
