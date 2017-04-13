@@ -31,11 +31,11 @@ public class Article {
     public  String getName() {return this.name; }
 
 
-    public void setDescripcion(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    public  String getDescripcion() { return this.description; }
+    public  String getDescription() { return this.description; }
 
     @Override
     public String toString() {
