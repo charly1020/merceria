@@ -16,6 +16,7 @@ public class Article {
     private Long id;
     private String name;
     private String description;
+    private double price;
 
     //This constructor is for the sake of JPA
     protected Article() {}
@@ -37,9 +38,15 @@ public class Article {
 
     public  String getDescription() { return this.description; }
 
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public double getPrice(){ return this.price;}
+
     @Override
     public String toString() {
-        return String.format( "Article[id=%d, name='%s, description='%s]", this.id, this.name , this.description);
+        return String.format( "Article[id=%d, name='%s, description='%s, price=%d]", this.id, this.name , this.description, this.price);
 
     }
 }
