@@ -12,5 +12,5 @@ public interface ArticleRepository extends CrudRepository<Article, Long> {
 
     List<Article> findByName( String name);
 
-    List<Article> findByDescripcion( String descripcion);
+    List<Article> findByDescription( String description);
 }
