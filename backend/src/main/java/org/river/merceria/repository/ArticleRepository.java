@@ -1,6 +1,6 @@
 package org.river.merceria.repository;
 
-import org.river.merceria.model.Article;
+import org.river.merceria.Article;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

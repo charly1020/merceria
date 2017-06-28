@@ -5,12 +5,20 @@
     <title>Title</title>
 </head>
 <body>
-    <p th:text="'name: ' + ${article.name}" />
 
-    <p th:text="'description: ' + ${article.description}" />
+    <p th:text="'quantity: ' + ${Article.quantity}"/>
 
-    <p th:double="price: ' + ${article.price}" />
+    <p th:text="'typeProd: ' +  ${Article.typeProd}"/>
 
+    <p th:text="'description: ' + ${Article.description}"/>
+
+    <p th:text="'category: ' + ${Article.category}"/>
+
+    <p th:text="'sku: ' + ${Article.sku}"/>
+
+    <p th:text="'parcialCost: ' + $ {Article.parcialCost}"/>
+
+    <p sh:text="'priceParcial: ' +${Article.priceParcial}"/>
 
 </body>
 </html>

@@ -4,10 +4,14 @@ DROP TABLE public.article;
 
 CREATE TABLE public.article
 (
-  name text,
-  id integer NOT NULL DEFAULT nextval('article_id_seq'::regclass),
+  quantity float,
+  typeProd text,
   description text,
-  CONSTRAINT id PRIMARY KEY (id)
+  sku integer NOT NULL DEFAULT nextval('article_sku_seq'::regclass),
+  category text,
+  parcialCost float,
+  priceParcial float,
+  CONSTRAINT sku PRIMARY KEY (sku)
 )
 WITH (
   OIDS=FALSE

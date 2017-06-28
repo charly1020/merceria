@@ -5,8 +5,10 @@
         <title>Title</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-
-
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+                crossorigin="anonymous"></script>
+        <script src="./resources/js/article.controller.js"></script>
 
         <!-- etiqueta para crear estilos-->
         <style>
@@ -36,27 +38,47 @@
             <h1>Nuevo Articulo</h1>
         </div>
 
-        <!--
-        <div class="distance-left">
-            <label>Nombre</label>
-            <input style="margin-left: 23px;" type="text"/>
-        </div>
-        -->
+
         <form method="POST" action="article">
+
             <div class="form-group col-xs-4 col-md-offset-4">
-                <label for="name">Name:</label>
-                <input type="text" class="form-control" id="Name" name="name"/>
+                <label for="quantity">Cantidad:</label>
+                <input type="text" class="form-control" id="quantity" name="quantity"/>
+            </div>
+
+
+            <div class="form-group col-xs-4 col-md-offset-4">
+                <label for="typeProd">Tipo de Producto:</label>
+                <input type="text" class="form-control" id="typeProd" name="typeProd"/>
             </div>
 
             <div class="form-group col-xs-4 col-md-offset-4">
-                <label for="description">Description:</label>
-                <input type="text" class="form-control" id="Description" name="description"/>
+                <label for="description">Descripcion:</label>
+                <input type="text" class="form-control" id="description" name="description"/>
+            </div>
+
+
+            <div class="form-group col-xs-4 col-md-offset-4">
+                <label for="category">Categoria:</label>
+                <input type="text" class="form-control" id="category" name="category"/>
+            </div>
+
+
+            <div class="form-group col-xs-4 col-md-offset-4">
+                <label for="sku">Codigo:</label>
+                <input type="text" class="form-control" id="sku" name="sku"/>
             </div>
 
             <div class="form-group col-xs-4 col-md-offset-4">
-                <label for="price">Precio:</label>
-                <input type="text" class="form-control" id="Price" name="price"/>
+                <label for="parcialCost">Costo Parcial:</label>
+                <input type="text" class="form-control" id="parcialCost" name="parcialCost"/>
             </div>
+
+            <div class="form-group col-xs-4 col-md-offset-4">
+                <label for="priceParcial">Precio Parcial:</label>
+                <input type="text" class="form-control" id="priceParcial" name="priceParcial"/>
+            </div>
+
             <input type="submit">Guardar</input>
         </form>
 

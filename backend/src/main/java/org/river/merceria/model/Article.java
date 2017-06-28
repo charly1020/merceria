@@ -4,49 +4,81 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 /**
- * Created by charly on 3/27/17.
+ * Created by marina on 26/06/17.
  */
 @Entity
 public class Article {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String description;
-    private double price;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    //This constructor is for the sake of JPA
-    protected Article() {}
-
-    public Article(String name) {
-        this.name = name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public  String getName() {return this.name; }
+  public float quantity;
+  public String typeProd;
+  public String description;
+  public String category;
+  public int sku;
+  public float parcialCost;
+  public float priceParcial;
 
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+  public float getQuantity() {
+    return quantity;
+  }
 
-    public  String getDescription() { return this.description; }
+  public void setQuantity(int quantity) {
+    this.quantity = quantity;
+  }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
+  public String getTypeProd() {
+    return typeProd;
+  }
 
-    public double getPrice(){ return this.price;}
+  public void setTypeProd(String typeProd) {
+    this.typeProd = typeProd;
+  }
 
-    @Override
-    public String toString() {
-        return String.format( "Article[id=%d, name='%s, description='%s, price=%d]", this.id, this.name , this.description, this.price);
+  public String getDescription() {
+    return description;
+  }
 
-    }
-}
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public String getCategory() {
+    return category;
+  }
+
+  public void setCategory(String category) {
+    this.category = category;
+  }
+
+  public int getSku() {return sku;}
+
+  public void setSku(int sku) {
+    this.sku = sku;
+  }
+
+  public float getParcialCost() {
+    return parcialCost;
+  }
+
+  public void setParcialCost(float parcialCost) {
+    this.parcialCost = parcialCost;
+  }
+
+  public float getPriceParcial() {
+    return priceParcial;
+  }
+
+  public void setPriceParcial(float priceParcial) {
+    this.priceParcial = priceParcial;
+  }
+
+  @Override
+  public String toString() {
+    return String.format("Article[quantity='%s, typeProd='%s, sku='%s description='%s, category='%s, parcialCost=%f," + " priceParcial%f]",
+        this.quantity, this.typeProd,this.category,this.sku, this.description,this.parcialCost,this.priceParcial);
+  }
+  }

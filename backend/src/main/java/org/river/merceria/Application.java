@@ -1,6 +1,5 @@
 package org.river.merceria;
 
-import org.river.merceria.model.Article;
 import org.river.merceria.repository.ArticleRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

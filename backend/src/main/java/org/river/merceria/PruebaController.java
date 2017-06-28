@@ -1,7 +1,5 @@
 package org.river.merceria;
 
-import org.river.merceria.model.Article;
-
 import org.river.merceria.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,8 +7,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Created by charly on 2/20/17.
