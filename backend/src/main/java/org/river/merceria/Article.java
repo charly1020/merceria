@@ -7,6 +7,7 @@ import javax.persistence.Id;
 
 /**
  * Created by charly on 3/27/17.
+ * class use to save article.
  */
 @Entity
 public class Article {
