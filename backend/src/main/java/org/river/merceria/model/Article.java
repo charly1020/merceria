@@ -12,17 +12,24 @@ public class Article {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+  private double quantity;
+  private String typeProd;
+  private String description;
+  private String category;
+  private int sku;
+  private double parcialCost;
+  private double priceParcial;
 
-  public float quantity;
-  public String typeProd;
-  public String description;
-  public String category;
-  public int sku;
-  public float parcialCost;
-  public float priceParcial;
+  public Long getId() {
+    return id;
+  }
 
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-  public float getQuantity() {
+  public double getQuantity() {
     return quantity;
   }
 
@@ -60,7 +67,7 @@ public class Article {
     this.sku = sku;
   }
 
-  public float getParcialCost() {
+  public double getParcialCost() {
     return parcialCost;
   }
 
@@ -68,7 +75,7 @@ public class Article {
     this.parcialCost = parcialCost;
   }
 
-  public float getPriceParcial() {
+  public double getPriceParcial() {
     return priceParcial;
   }
 
