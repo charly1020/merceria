@@ -1,5 +1,6 @@
 package org.river.merceria;
 
+import org.river.merceria.model.Article;
 import org.river.merceria.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,10 +25,9 @@ public class PruebaController {
 
     @PostMapping("/article")
     public String articleSubmit(@ModelAttribute Article article) {
-
-        repository.save( article );
-
-
+        article.setId(1L);
+        //System.out.println(article.toString());
+        repository.save(article);
         return "result";
     }
 }

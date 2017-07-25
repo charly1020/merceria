@@ -1,6 +1,6 @@
 package org.river.merceria.repository;
 
-import org.river.merceria.Article;
+import org.river.merceria.model.Article;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
@@ -10,9 +10,9 @@ import java.util.List;
  */
 public interface ArticleRepository extends CrudRepository<Article, Long> {
 
-    List<Article> findByName( String name);
+    List<Article> findBySku( String sku);
 
     List<Article> findByDescription( String description);
 
-    List<Article> findByPrice( double price);
+    //List<Article> findByPrice( double price);
 }

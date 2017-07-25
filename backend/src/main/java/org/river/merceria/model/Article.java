@@ -1,19 +1,15 @@
 package org.river.merceria.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 /**
  * Created by marina on 26/06/17.
  */
 @Entity
 public class Article {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  private double quantity;
+  private int quantity;
   private String typeProd;
   private String description;
   private String category;
@@ -21,6 +17,9 @@ public class Article {
   private double parcialCost;
   private double priceParcial;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_gen")
+    @SequenceGenerator(name = "seq_gen", sequenceName = "id_seq")
   public Long getId() {
     return id;
   }
@@ -29,7 +28,7 @@ public class Article {
     this.id = id;
   }
 
-  public double getQuantity() {
+  public int getQuantity() {
     return quantity;
   }
 
@@ -71,7 +70,7 @@ public class Article {
     return parcialCost;
   }
 
-  public void setParcialCost(float parcialCost) {
+  public void setParcialCost(double parcialCost) {
     this.parcialCost = parcialCost;
   }
 
@@ -79,7 +78,7 @@ public class Article {
     return priceParcial;
   }
 
-  public void setPriceParcial(float priceParcial) {
+  public void setPriceParcial(double priceParcial) {
     this.priceParcial = priceParcial;
   }
 
