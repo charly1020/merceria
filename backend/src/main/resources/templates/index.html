@@ -40,74 +40,67 @@
 </div>
 
 
-<form method="POST" action="article" class="col-sm-6">
+  <form method="POST" action="article" class="col-sm-8">
 
-  <div class="form-group col-xs-4 col-md-offset-4">
-    <label for="sku">Sku:</label>
-    <input type="text" class="form-control" id="sku" name="sku"/>
-  </div>
+    <div class="form-group col-xs-6">
+      <label for="sku">Sku:</label>
+      <input type="text" class="form-control" id="sku" name="sku"/>
+    </div>
 
-  <div class="form-group col-xs-4 col-md-offset-4">
-    <label for="quantity">Cantidad:</label>
-    <input type="text" class="form-control" id="quantity" name="quantity"/>
-  </div>
-  <div class="form-group col-xs-4 col-md-offset-4">
+    <div class="form-group col-xs-6">
+      <label for="precio">Precio:</label>
+      <input type="text" class="form-control" id="precio" name="precio"/>
+    </div>
 
-    <label for="typeProd">Elige un Tipo de Producto:</label>
-    <select id="typeProd" name="typeProd">
-      <option value="Costuras">Costuras</option>
-      <option value="Libreria">Libreria</option>
-      <option value="Hogar">Hogar</option>
-      <option value="Articulos Femeninos">Articulos Femeninos</option>
-      <option value="Indumentaria">Indumentaria</option>
-      <option value="Cumpleanos">Cumpleanos</option>
-      <option value="Accesorios">Accesorios</option>
-      <option value=""></option>
-    </select>
-  </div>
+    <div class="form-group col-xs-6">
+      <label for="quantity">Cantidad:</label>
+      <input type="text" class="form-control" id="quantity" name="quantity"/>
+    </div>
+    <div class="form-group col-xs-6">
+      <label for="costo">Costo:</label>
+      <input type="text" class="form-control" id="costo" name="costo"/>
+    </div>
 
-  <div class="form-group col-xs-4 col-md-offset-4">
-    <label for="description">Descripcion:</label>
-    <input type="text" class="form-control" id="description" name="description"/>
-  </div>
-</form>
-  <form method="POST" action="article" class="col-sm-6">
-  <div class="form-group col-xs-4 col-md-offset-4">
-    <label for="parcialCost">Costo Parcial:</label>
-    <input type="text" class="form-control" id="parcialCost" name="parcialCost"/>
-  </div>
+    <div class="form-group col-xs-6">
 
-  <div class="form-group col-xs-4 col-md-offset-4">
-    <label for="priceParcial">Precio Parcial:</label>
-    <input type="text" class="form-control" id="priceParcial" name="priceParcial"/>
-  </div>
+      <label for="typeProd">Elige un Tipo de Producto:</label>
+      <select id="typeProd" name="typeProd">
+        <option value="Costuras">Costuras</option>
+        <option value="Libreria">Libreria</option>
+        <option value="Hogar">Hogar</option>
+        <option value="Articulos Femeninos">Articulos Femeninos</option>
+        <option value="Indumentaria">Indumentaria</option>
+        <option value="Cumpleanos">Cumpleanos</option>
+        <option value="Accesorios">Accesorios</option>
+        <option value=""></option>
+      </select>
+    </div>
 
-  <div class="form-group col-xs-4 col-md-offset-4">
-    <label for="costo">Costo:</label>
-    <input type="text" class="form-control" id="costo" name="costo"/>
-  </div>
-  <div class="form-group col-xs-4 col-md-offset-4">
-    <label for="precio">Precio:</label>
-    <input type="text" class="form-control" id="precio" name="precio"/>
-  </div>
+    <div class="form-group col-xs-6">
+      <label for="priceParcial">Precio Parcial:</label>
+      <input type="text" class="form-control" id="priceParcial" name="priceParcial"/>
+    </div>
 
-  <!--<input type="submit" class="btn btn-primary">Guardar</input>-->
-</form>
+    <div class="form-group col-xs-6">
+      <label for="description">Descripcion:</label>
+      <input type="text" class="form-control" id="description" name="description"/>
+    </div>
 
-<form>
-  <div class="row">
-    <div>
+    <div class="col-sm-6 col-sm-offset-4">
       <input type="submit" class="btn btn-primary">Guardar</input>
     </div>
 
-    <div class="col-xs-1 col-md-offset-5">
-      <button type="button" class="btn btn-success">Cancelar</button>
-    </div>
 
-    <div class="col-xs-1">
-      <button type="button" class="btn btn-primary">Guardar</button>
+    <div class="row">
+
+      <div class="col-sm-6">
+        <button type="button" class="btn btn-success">Cancelar</button>
+      </div>
+
+      <div class="col-sm-6">
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
     </div>
-  </div>
 
 </form>
 
