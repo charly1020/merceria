@@ -13,9 +13,11 @@ public class Article {
   private String typeProd;
   private String description;
   private String category;
-  private int sku;
+  private String sku;
   private double parcialCost;
   private double priceParcial;
+  private double costo;
+  private double precio;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_gen")
@@ -60,9 +62,11 @@ public class Article {
     this.category = category;
   }
 
-  public int getSku() {return sku;}
+  public String getSku() {
+    return sku;
+  }
 
-  public void setSku(int sku) {
+  public void setSku(String sku) {
     this.sku = sku;
   }
 
@@ -82,9 +86,25 @@ public class Article {
     this.priceParcial = priceParcial;
   }
 
+  public double getCosto() {
+    return costo;
+  }
+
+  public void setCosto(double costo) {
+    this.costo = costo;
+  }
+
+  public double getPrecio() {
+    return precio;
+  }
+
+  public void setPrecio(double precio) {
+    this.precio = precio;
+  }
+
   @Override
   public String toString() {
-    return String.format("Article[quantity='%s, typeProd='%s, sku='%s description='%s, category='%s, parcialCost=%f," + " priceParcial%f]",
-        this.quantity, this.typeProd,this.category,this.sku, this.description,this.parcialCost,this.priceParcial);
+    return String.format("Article[quantity='%d, typeProd='%s, sku='%s, description='%s, category='%s, parcialCost=%f, priceParcial='%f, costo='%f, precio='%f]",
+        this.quantity, this.typeProd, this.sku, this.description, this.category, this.parcialCost, this.priceParcial, this.costo, this.precio);
   }
   }

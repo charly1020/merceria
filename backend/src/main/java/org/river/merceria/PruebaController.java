@@ -25,8 +25,8 @@ public class PruebaController {
 
     @PostMapping("/article")
     public String articleSubmit(@ModelAttribute Article article) {
-        article.setId(1L);
-        //System.out.println(article.toString());
+        //article.setId(1L);
+        System.out.println(article.toString());
         repository.save(article);
         return "result";
     }

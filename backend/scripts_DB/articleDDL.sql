@@ -7,12 +7,15 @@ CREATE TABLE public.article
   quantity float,
   typeProd text,
   description text,
-  sku integer,
+  sku text,
   id Long NOT NULL DEFAULT nextval('article_id'::regclass),
   category text,
   parcialCost float,
   priceParcial float,
+  costo double,
+  precio double,
   CONSTRAINT id PRIMARY KEY (id)
+
 )
 WITH (
   OIDS=FALSE
