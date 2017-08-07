@@ -8,7 +8,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
           integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
           crossorigin="anonymous"></script>
-  <script src="./resources/js/article.controller.js"></script>
+  <script src="./js/init.js"></script>
 
   <!-- etiqueta para crear estilos-->
   <style>
@@ -40,11 +40,11 @@
 </div>
 
 
-  <form method="POST" action="article" class="col-sm-8">
+  <form class="col-sm-8">
 
     <div class="form-group col-xs-6">
       <label for="sku">Sku:</label>
-      <input type="text" class="form-control" id="sku" name="sku"/>
+      <input type="text" class="form-control" id="sku" name="sku" placeholder="sku"/>
     </div>
 
     <div class="form-group col-xs-6">
@@ -56,6 +56,7 @@
       <label for="quantity">Cantidad:</label>
       <input type="text" class="form-control" id="quantity" name="quantity"/>
     </div>
+
     <div class="form-group col-xs-6">
       <label for="costo">Costo:</label>
       <input type="text" class="form-control" id="costo" name="costo"/>
@@ -86,12 +87,16 @@
       <input type="text" class="form-control" id="description" name="description"/>
     </div>
 
-    <div class="col-sm-6 col-sm-offset-4">
-      <input type="submit" class="btn btn-primary">Guardar</input>
+    <div class="form-group col-xs-6">
+      <label for="parcialCost">Costo Parcial</label>
+      <input type="text" class="form-control" id="parcialCost" name="parcialCost"/>
     </div>
 
+    <div class="col-sm-6 col-sm-offset-4">
+      <input type="button" class="btn btn-primary" onclick="saveArticle()" value="Guardar"/>
+    </div>
 
-    <div class="row">
+    <!--<div class="row">
 
       <div class="col-sm-6">
         <button type="button" class="btn btn-success">Cancelar</button>
@@ -100,9 +105,9 @@
       <div class="col-sm-6">
         <button type="button" class="btn btn-primary">Guardar</button>
       </div>
-    </div>
+    </div> -->
 
-</form>
+  </form>
 
 <!-- 1 2 3 4 5 6 7 8 9 10 11 12-->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -112,6 +117,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+
+
 
 </body>
 
