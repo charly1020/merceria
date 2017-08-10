@@ -10,24 +10,29 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 
 /**
- * Created by charly on 2/20/17.
+ * Created by marina on 2/20/17.
  */
 @Controller
-public class PruebaController {
+public class ArticleController {
 
     @Autowired
     private ArticleRepository repository;
 
-    @RequestMapping("/greeting")
+    @RequestMapping("/article")
     public String greeting(@RequestParam(value="name", defaultValue="World") String name) {
-        return "index";
+        return "article";
+    }
+
+    @RequestMapping("/list")
+    public String list(@RequestParam(value="name", defaultValue="World") String name) {
+        return "list";
     }
 
     @PostMapping("/article")
     public String articleSubmit(@ModelAttribute Article article) {
-        //article.setId(1L);
         System.out.println(article.toString());
         repository.save(article);
         return "result";
     }
+
 }

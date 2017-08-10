@@ -11,7 +11,37 @@ function saveArticle() {
   leerValuesFromView();
   showValuesFromView();
 
+  if(!validateArticle()) {
+    return;
+  }
 
+  saveArticleHttp();
+}
+
+function leerValuesFromView() {
+
+    article.sku = document.getElementById('sku').value;
+    article.precio = document.getElementById('precio').value;
+    article.quantity = document.getElementById('quantity').value;
+    article.costo = document.getElementById('costo').value;
+    article.typeProd = document.getElementById('typeProd').value;
+    article.priceParcial = document.getElementById('priceParcial').value;
+    article.description = document.getElementById('description').value;
+    article.parcialCost = document.getElementById('parcialCost').value;
+}
+
+function showValuesFromView() {
+  console.log("El valor sku seleccionado es: " + article.sku);
+  console.log("El valor precio del articulo es: " + article.precio);
+  console.log("La cantidad ingresada es: " + article.quantity);
+  console.log("El costo del articulo es: " + article.costo);
+  console.log("El tipo de producto seleccionado es: " + article.typeProd);
+  console.log("El precio parcial del articulo es: " + article.priceParcial);
+  console.log("La descripcion del producto es: " + article.desription);
+  console.log("El precio parcial es: " + article.parcialCost);
+}
+
+function validateArticle() {
   //validar que se haya completado los campos requeridos, y que esten correctos
   //"" -> es un valor de tipo string, pero sin caracteres;
   //undefine -> signifca que no se creo la variable;
@@ -53,7 +83,11 @@ function saveArticle() {
 
   /*VALIDACIONES DE CAMPOS VALIDOS*/
 
+  return true;
 
+}
+
+function saveArticleHttp() {
   //Empieza Ajax (peticiones async)
   var http = new XMLHttpRequest();
   var url = "article";
@@ -75,33 +109,7 @@ function saveArticle() {
   //peticion real al backend
   http.send(params);
 
-
 }
-function leerValuesFromView() {
-
-    article.sku = document.getElementById('sku').value;
-    article.precio = document.getElementById('precio').value;
-    article.quantity = document.getElementById('quantity').value;
-    article.costo = document.getElementById('costo').value;
-    article.typeProd = document.getElementById('typeProd').value;
-    article.priceParcial = document.getElementById('priceParcial').value;
-    article.description = document.getElementById('description').value;
-    article.parcialCost = document.getElementById('parcialCost').value;
-}
-
-function showValuesFromView() {
-  console.log("El valor sku seleccionado es: " + article.sku);
-  console.log("El valor precio del articulo es: " + article.precio);
-  console.log("La cantidad ingresada es: " + article.quantity);
-  console.log("El costo del articulo es: " + article.costo);
-  console.log("El tipo de producto seleccionado es: " + article.typeProd);
-  console.log("El precio parcial del articulo es: " + article.priceParcial);
-  console.log("La descripcion del producto es: " + article.desription);
-  console.log("El precio parcial es: " + article.parcialCost);
-}
-
-
-
 
 
 
