@@ -87,10 +87,31 @@ function validateArticle() {
 
 }
 
+
+function getArticles() {
+  //Empieza Ajax (peticiones async)
+  var http = new XMLHttpRequest();
+  var url = "/articles";
+
+   http.open("GET", url, true);
+
+    http.onreadystatechange = function() {//Call a function when the state changes.
+       if(http.status == 200) {
+           alert("metodo GET.");
+       } else {
+           alert("otro gato.");
+       }
+     }
+
+    //peticion real al backend
+   http.send();
+}
+
+
 function saveArticleHttp() {
   //Empieza Ajax (peticiones async)
   var http = new XMLHttpRequest();
-  var url = "article";
+  var url = "/article";
   var params = "sku=" + article.sku + '&' + "precio=" + article.precio + '&' + "quantity=" + article.quantity + '&' + "costo=" + article.costo + '&' + "typeProd=" + article.typeProd + '&' + "priceParcial=" + article.priceParcial + '&' + "description=" + article.description + '&' + "parcialCost=" + article.parcialCost;
 
   //le decis que metodo http estas invocando (POST-GET-DELETE-UPDATE)
@@ -108,7 +129,6 @@ function saveArticleHttp() {
 
   //peticion real al backend
   http.send(params);
-
 }
 
 

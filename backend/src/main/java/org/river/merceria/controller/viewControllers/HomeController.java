@@ -1,4 +1,4 @@
-package org.river.merceria;
+package org.river.merceria.controller.viewControllers;
 
 import org.river.merceria.model.Article;
 import org.river.merceria.repository.ArticleRepository;
@@ -20,7 +20,7 @@ public class HomeController{
   private ArticleRepository repository;
 
   @RequestMapping("/home")
-  public String greeting(@RequestParam(value="name", defaultValue="World") String name) {
+  public String getHome(@RequestParam(value="name", defaultValue="World") String name) {
     return "home";
   }
 }

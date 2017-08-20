@@ -4,22 +4,24 @@
   <meta charset="UTF-8"/>
   <title>Title</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
 </head>
 <body>
-  <p> articulos</p>
-  <a href="home">Home</a>
+  <a href="/home">Home</a>
 
   <div class="container">
+  <div class="text-center Semibold 36px bg-warning">
+    <h1>Article List</h1>
+  </div>
 
-    <p>Listado de Articulos</p>
 
     <table class="table table-bordered">
       <thead>
       <tr>
-        <th><strong>precio</strong></th>
-        <th><strong>cantidad</strong></th>
-        <th><strong>costo</strong></th>
-        <th><strong>Tipo de producto</strong></th>
+        <th><strong>Precio</strong></th>
+        <th><strong>Cantidad</strong></th>
+        <th><strong>Costo</strong></th>
+        <th><strong>Tipo de Producto</strong></th>
         <th><strong>Precio Parcial</strong></th>
         <th><strong>Descripcion</strong></th>
         <th><strong>Costo Parcial</strong></th>
@@ -31,14 +33,18 @@
           <td>articulos</td>
         </tr>
       </tbody>
-
     </table>
+
+    <div>
+      <input type="button" value="Obtener Articulos" onclick="getArticles()"/>
+    </div>
   </div>
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
           integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
           crossorigin="anonymous"></script>
+  <script src="/js/init.js"></script>
 
 
 </body>
