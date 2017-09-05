@@ -102,8 +102,10 @@ function getArticles() {
          var a = http.responseText;
          if(a != '') {
           listArticle = JSON.parse(a);
-          crearFilas(listArticle[0]);
-          crearFilas(listArticle[1]);
+
+          for(var i=0; i < listArticle.length ; i++){
+           crearFilas(listArticle[i]);
+          }
          }
        }
      }

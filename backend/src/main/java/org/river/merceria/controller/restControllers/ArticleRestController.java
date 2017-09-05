@@ -32,14 +32,13 @@ public class ArticleRestController {
 
     List<Article> listPrueba = repository.findAll();
     return listPrueba;
-
   }
 
-  @GetMapping(value="/articles/{sku}")
+  @GetMapping(value="/articles/{sku}", produces = MediaType.APPLICATION_JSON_VALUE)
   public Article getRepository(@PathVariable String sku) {
 
-    Article art1 = repository.findBysku(sku);
+    Article article1 = repository.findBysku(sku);
 
-    return art1;
+    return article1;
   }
 }
