@@ -99,13 +99,16 @@ function saveArticleHttp() {
   http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
   http.onreadystatechange = function() {//Call a function when the state changes.
-    if(http.status == 200) {
+    if(http.readyState == 4 && http.status == 200) {
+      console.log(http.responseText);
+       var a = http.responseText;
+      if(a != '') {
         alert("El articulo se guardo correctamente.");
     } else {
         alert("No se pudo guardar el articulo.");
     }
   }
-
+}
   //peticion real al backend
   http.send(params);
 }

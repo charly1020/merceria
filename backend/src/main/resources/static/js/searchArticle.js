@@ -9,7 +9,6 @@ function getRepository() {
   var http = new XMLHttpRequest();
   var sku = document.getElementById('sku').value;
   var url = "/articles" + "/" + sku;
-  //var url = "/article" + "/sku=" + sku;
 
    http.open("GET", url, true);
 
@@ -19,6 +18,7 @@ function getRepository() {
          var art1 = http.responseText;
          if(art1 != '') {
           article1 = JSON.parse(art1);
+
           showArticle(article1);
 
          }

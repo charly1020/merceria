@@ -19,9 +19,12 @@ function getArticles() {
          if(a != '') {
           listArticle = JSON.parse(a);
 
+          clearArticleTable();
+
           for(var i=0; i < listArticle.length ; i++){
            crearFilas(listArticle[i]);
           }
+
          }
        }
      }
@@ -31,7 +34,7 @@ function getArticles() {
 
 function crearFilas(article) {
 
-  $('#tblArticles tr:last').after('<tr>' +
+  $('#tblArticles tbody').append('<tr>' +
   '<td>' + article.sku +'</td>' +
   '<td>' + article.precio + '</td>'+
   '<td>' + article.quantity +'</td>' +
@@ -47,6 +50,7 @@ function crearFilas(article) {
 }
 
 function clearArticleTable(){
+ $("tbody").find('tr').remove()
 }
 
 function deleteArticle(btn){
