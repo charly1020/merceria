@@ -1,6 +1,5 @@
 package org.river.merceria.repository;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.river.merceria.model.Article;
 import org.springframework.data.repository.CrudRepository;
 

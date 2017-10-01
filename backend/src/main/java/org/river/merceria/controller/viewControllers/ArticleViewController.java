@@ -24,4 +24,10 @@ public class ArticleViewController {
   public String search(@RequestParam(value="name", defaultValue="World") String name) {
     return "searchArticle";
   }
+
+  @RequestMapping("/article/sale")
+  public String saleArticle(@RequestParam(value="name", defaultValue = "world") String name){
+    return "sale";
+  }
+
 }

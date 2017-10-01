@@ -49,7 +49,7 @@ function validateArticle() {
 
   /*VALIDACIONES DE CAMPOS REQUERIDOS*/
   if(article.sku == null || article.sku == "") {
-    alert("paparulo/a te falto el sku");
+    alert("Ingrese el sku");
     return false;
   }
   if(article.precio == null || article.precio == ""){
