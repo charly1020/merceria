@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  </head>
+  <body>
+      <div>
+        <a href="/home">Pagina Principal</a>
+      </div>
+      <div class="text-center Semibold 36px btn-info">
+        <h1> Nueva Venta </h1>
+      </div>
+      <form>
+        <div class="container">
+          <div class="row justify-content-start">
+            <div class="col-sm-4">
+              <label for="sku">Ingrese el codigo del articulo</label>
+              <input type="text" class="form-control" placeholder="Codigo" id="sku" name="sku"/>
+            </div>
+
+            <div class="col-sm-4">
+              <label>Ingrese la cantidad</label>
+              <input type="text" class="form-control" placeholder="Cantidad Vendida" id="articleQuantity" name="articleQuantity"/>
+            </div>
+          </div>
+
+          <div class="row justify-content-around">
+            <div id="articleDescription" class="col-4">
+              <label>Descripcion del articulo: </label>
+            </div>
+            <div id="articleCosto" class="col-4">
+              <label>Costo del Articulo: </label>
+            </div>
+            <div id="articlePrecio" class="col-4" >
+              <label>Precio de venta: </label>
+            </div>
+          </div>
+
+          <div class="row justify-content-end">
+            <div class="col-sm-4">
+              <input type="button" value="Mostrar Articulo" class="btn btn-primary " onclick="getArticle()"/>
+            </div>
+            <div class="col-sm-4">
+              <input type="button" value="Agregar" class="btn btn-primary btn-md" onclick="saveItemSale()"/>
+            </div>
+          </div>
+          <div class="row">
+            <table id="tbl2Sale" class="table table-bordered">
+              <thead>
+              <tr>
+                <th class="text-center">Codigo</th>
+                <th class="text-center">Descripcion</th>
+                <th class="text-center">Costo</th>
+                <th class="text-center">Precio</th>
+                <th class="text-center">Cantidad</th>
+                <th class="text-center">Monto</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr></tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </form>
+
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+              crossorigin="anonymous"></script>
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+              integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+              crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+              integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+              crossorigin="anonymous"></script>
+      <script src="/js/article.service.js"></script>
+      <script src="/js/itemSale.service.js"></script>
+      <script src="/js/ItemSaleArticle.js"></script>
+      <!--<script src="/js/listArticle.js"></script>-->
+
+  </body>
+
+</html>
+

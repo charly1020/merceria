@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by marina on 26/06/17.
  */
 @Entity
-public class Article {
+public class Article{
 
   private Long id;
   private int quantity;

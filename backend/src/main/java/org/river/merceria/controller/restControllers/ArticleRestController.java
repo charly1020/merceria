@@ -49,4 +49,5 @@ public class ArticleRestController {
     return new ResponseEntity(sku, HttpStatus.OK);
 
   }
+
 }
