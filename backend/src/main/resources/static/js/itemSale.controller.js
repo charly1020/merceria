@@ -44,9 +44,9 @@ function saveArticle() {
     saveArticleHttp();
 }
 
-function operation(precio , quantity){
+/*function operation(precio , quantity){
     return (parseInt(precio) * parseInt(quantity));
-}
+}*/
 
 function getArticle() {
     getArticleServ(showArticle);
@@ -56,12 +56,6 @@ function getArticleItemSale(){
 }
 
 function saveItemSale() {
-  //leerValuesFromView();
-  //showValuesFromView();
-
-  /*if(!validateItemSale()) {
-    return;
-  }*/
 
   var itemSale = {
     sku: "bla",
@@ -99,22 +93,4 @@ function getSale() {
 function clearArticleTable(){
  $("tbody").find('tr').remove()
 }
-
-//function saleArticle(){
-  //  saveItemSaleServ(newRow);
-//}
-//function addNewSale(resolveSale){
-
-//}
-//function resolveSale(article){
-  //  clearArticleTable(articles);
-  //saveArticle(article);
-  //operation(article);
-//}
-//function addSale(){
-   // clearArticleTable(article);
-//}
-            //showArticle(itemSaleResponse);
-            //newRow(itemSaleResponse);
-            //operation(itemSaleResponse);
 
