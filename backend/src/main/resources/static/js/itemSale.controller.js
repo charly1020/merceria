@@ -3,16 +3,21 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 var art1 = {};
+var itemSale = {};
+var articleResponse;
 
 function showArticle(article){
+
+  articleResponse = article;
+
   $(".desc").remove();
   $("#articleDescription").append("<label class='desc' >" + article.description + " </label>");
 
   $(".cost").remove();
-  $("#articleCosto").append("<label class='cost' >" + article.costo  + "</label>");
+  $("#articleCost").append("<label class='cost' >" + article.cost  + "</label>");
 
   $(".prec").remove();
-  $("#articlePrecio").append("<label class='prec' >" + article.precio + "</label>");
+  $("#articlePrice").append("<label class='prec' >" + article.price + "</label>");
 
 }
 function newRow(itemSale){
@@ -36,17 +41,13 @@ function validationDate(){
   }
 }
 
-function saveArticle() {
-
-    if(!validationDate()) {
-        return;
-    }
-    saveArticleHttp();
+function readValues(){
+    itemSale.sku = document.getElementById('sku').value;
+    itemSale.quantity = document.getElementById('quantity').value;
+    itemSale.description = articleResponse.description;
+    itemSale.cost = articleResponse.cost;
+    itemSale.price = articleResponse.price;
 }
-
-/*function operation(precio , quantity){
-    return (parseInt(precio) * parseInt(quantity));
-}*/
 
 function getArticle() {
     getArticleServ(showArticle);
@@ -57,40 +58,8 @@ function getArticleItemSale(){
 
 function saveItemSale() {
 
-  var itemSale = {
-    sku: "bla",
-    description: "bla2",
-    cost: 23,
-    price: 34,
-    quantity: 2
-  };
-
+  readValues();
 
   saveItemSaleHttp(itemSale, newRow);
-}
-
-
-function getSale() {
-
-  var http = new XMLHttpRequest();
-  var sku = document.getElementById('sku').value;
-  var url = "/itemSale" + "/" + sku;
-
-   http.open("GET", url, true);
-
-    http.onreadystatechange = function() {//Call a function when the state changes.
-       if(http.readyState == 4 && http.status == 200) {
-         console.log(http.responseText);
-         var art1 = http.responseText;
-         if(art1 != '') {
-          itemSale = JSON.parse(art1);
-         }
-       }
-     }
-    http.send();
-}
-
-function clearArticleTable(){
- $("tbody").find('tr').remove()
 }
 

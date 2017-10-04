@@ -1,7 +1,7 @@
 
 
 
-function saveItemSaleHttp(itemSale, funcPromice) {
+function saveItemSaleHttp(itemSale,funcPromice) {
     var http = new XMLHttpRequest();
     var url = "/itemSale";
     var params = "sku=" + itemSale.sku + '&' + "description=" + itemSale.description + '&' + "cost=" + itemSale.cost + '&' + "price=" + itemSale.price  + '&' + "quantity=" + itemSale.quantity;

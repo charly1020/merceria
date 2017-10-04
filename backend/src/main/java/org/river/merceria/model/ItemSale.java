@@ -82,5 +82,5 @@ public class ItemSale {
     return String.format("ItemSale[sku='%s,description='%d, cost='%f, price='%f, quantity='%f, monto='%f]",
         this.sku, this.description, this.cost, this.price, this.quantity, this.monto);
   }
-*/
+  */
 }

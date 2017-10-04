@@ -21,9 +21,9 @@ function saveArticle() {
 function leerValuesFromView() {
 
     article.sku = document.getElementById('sku').value;
-    article.precio = document.getElementById('precio').value;
+    article.price = document.getElementById('price').value;
     article.quantity = document.getElementById('quantity').value;
-    article.costo = document.getElementById('costo').value;
+    article.cost = document.getElementById('cost').value;
     article.typeProd = document.getElementById('typeProd').value;
     article.priceParcial = document.getElementById('priceParcial').value;
     article.description = document.getElementById('description').value;
@@ -32,9 +32,9 @@ function leerValuesFromView() {
 
 function showValuesFromView() {
   console.log("El valor sku seleccionado es: " + article.sku);
-  console.log("El valor precio del articulo es: " + article.precio);
+  console.log("El valor precio del articulo es: " + article.price);
   console.log("La cantidad ingresada es: " + article.quantity);
-  console.log("El costo del articulo es: " + article.costo);
+  console.log("El costo del articulo es: " + article.cost);
   console.log("El tipo de producto seleccionado es: " + article.typeProd);
   console.log("El precio parcial del articulo es: " + article.priceParcial);
   console.log("La descripcion del producto es: " + article.desription);
@@ -52,15 +52,15 @@ function validateArticle() {
     alert("Ingrese el sku");
     return false;
   }
-  if(article.precio == null || article.precio == ""){
-    alert("don ingrese el precio porfis");
+  if(article.price == null || article.price == ""){
+    alert("ingrese el precio");
     return false;
   }
   if(article.quantity == null || article.quantity == ""){
-    alert(" ingresa la cantidad del producto");
+    alert(" ingrese la cantidad del producto");
     return false;
   }
-  if(article.costo == null || article.costo == ""){
+  if(article.cost == null || article.cost == ""){
     alert("ingrese el costo del producto");
     return false;
   }
@@ -73,7 +73,7 @@ function validateArticle() {
     return false;
   }
   if(article.description == null || article.description == ""){
-    alert("ingrese la descripcion pueeesss");
+    alert("ingrese la descripcion ");
     return false;
   }
   if(article.parcialCost == null || article.parcialCost == ""){
@@ -91,7 +91,7 @@ function saveArticleHttp() {
   //Empieza Ajax (peticiones async)
   var http = new XMLHttpRequest();
   var url = "/article";
-  var params = "sku=" + article.sku + '&' + "precio=" + article.precio + '&' + "quantity=" + article.quantity + '&' + "costo=" + article.costo + '&' + "typeProd=" + article.typeProd + '&' + "priceParcial=" + article.priceParcial + '&' + "description=" + article.description + '&' + "parcialCost=" + article.parcialCost;
+  var params = "sku=" + article.sku + '&' + "price=" + article.price + '&' + "quantity=" + article.quantity + '&' + "cost=" + article.cost + '&' + "typeProd=" + article.typeProd + '&' + "priceParcial=" + article.priceParcial + '&' + "description=" + article.description + '&' + "parcialCost=" + article.parcialCost;
 
   //le decis que metodo http estas invocando (POST-GET-DELETE-UPDATE)
   http.open("POST", url, true);
@@ -112,10 +112,3 @@ function saveArticleHttp() {
   //peticion real al backend
   http.send(params);
 }
-
-
-
-
-
-
-
