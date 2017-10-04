@@ -20,10 +20,10 @@ public class ItemSaleRestController {
 
 
   @PostMapping("/itemSale")
-  public String newItemSale(@ModelAttribute ItemSale itemSale) {
+  public ItemSale newItemSale(@ModelAttribute ItemSale itemSale) {
     System.out.println(itemSale.toString());
     repository.save(itemSale);
-    return "result";
+    return itemSale;
 
   }
   @GetMapping(value="/itemSale", produces = MediaType.APPLICATION_JSON_VALUE)
