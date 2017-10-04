@@ -14,14 +14,16 @@ function saveItemSaleHttp(itemSale,funcPromice) {
     http.onreadystatechange = function(){
         if(http.readyState == 4 && http.status == 200){
            console.log(http.responseText);
-           var itemSale = http.responseText;
+           var itemSale1 = http.responseText;
 
-           if(itemSale != ''){
+           if(itemSale1 != ''){
               alert("El Item de venta  se guardo")
            }else{
               alert("El Item de venta no se guardo")
            }
+           itemSale= JSON.parse(itemSale1);
            funcPromice(itemSale);
+
         }
     }
 
