@@ -30,7 +30,7 @@ function newRow(itemSale){
      '<td>' + itemSale.monto + '</td>'+
      '</tr>');
 }
-function validationDate(){
+/*function validationDate(){
   if(itemSale.sku == null || itemSale.sku == "") {
      alert("ingrese el sku");
      return false;
@@ -40,7 +40,7 @@ function validationDate(){
       return false;
   }
 }
-
+*/
 function readValues(){
     itemSale.sku = document.getElementById('sku').value;
     itemSale.quantity = document.getElementById('quantity').value;
@@ -51,9 +51,6 @@ function readValues(){
 
 function getArticle() {
     getArticleServ(showArticle);
-}
-function getArticleItemSale(){
-    saveItemSaleServ(newRow)
 }
 
 function saveItemSale() {
