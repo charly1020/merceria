@@ -36,9 +36,9 @@ function crearFilas(article) {
 
   $('#tblArticles tbody').append('<tr>' +
   '<td>' + article.sku +'</td>' +
-  '<td>' + article.precio + '</td>'+
+  '<td>' + article.price + '</td>'+
   '<td>' + article.quantity +'</td>' +
-  '<td>' + article.costo + '</td>' +
+  '<td>' + article.cost + '</td>' +
   '<td>' + article.typeProd + '</td>' +
   '<td>' + article.priceParcial + '</td>' +
   '<td>' + article.category + '</td>' +

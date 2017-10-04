@@ -16,8 +16,8 @@ public class Article{
   private String sku;
   private double parcialCost;
   private double priceParcial;
-  private double costo;
-  private double precio;
+  private double cost;
+  private double price;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_gen")
@@ -86,25 +86,25 @@ public class Article{
     this.priceParcial = priceParcial;
   }
 
-  public double getCosto() {
-    return costo;
+  public double getCost() {
+    return cost;
   }
 
-  public void setCosto(double costo) {
-    this.costo = costo;
+  public void setCost(double costo) {
+    this.cost = cost;
   }
 
-  public double getPrecio() {
-    return precio;
+  public double getPrice() {
+    return price;
   }
 
-  public void setPrecio(double precio) {
-    this.precio = precio;
+  public void setPrice(double price) {
+    this.price = price;
   }
 
   @Override
   public String toString() {
-    return String.format("Article[quantity='%d, typeProd='%s, sku='%s, description='%s, category='%s, parcialCost=%f, priceParcial='%f, costo='%f, precio='%f]",
-        this.quantity, this.typeProd, this.sku, this.description, this.category, this.parcialCost, this.priceParcial, this.costo, this.precio);
+    return String.format("Article[quantity='%d, typeProd='%s, sku='%s, description='%s, category='%s, parcialCost=%f, priceParcial='%f, cost='%f, price='%f]",
+        this.quantity, this.typeProd, this.sku, this.description, this.category, this.parcialCost, this.priceParcial, this.cost, this.price);
   }
   }
