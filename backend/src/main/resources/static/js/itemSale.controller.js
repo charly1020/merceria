@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-var art1 = {};
 var itemSale = {};
 var articleResponse;
 
@@ -30,7 +29,7 @@ function newRow(itemSale){
      '<td>' + itemSale.monto + '</td>'+
      '</tr>');
 }
-/*function validationDate(){
+function validateItemSale(){
   if(itemSale.sku == null || itemSale.sku == "") {
      alert("ingrese el sku");
      return false;
@@ -39,8 +38,9 @@ function newRow(itemSale){
       alert(" ingresa la cantidad del producto");
       return false;
   }
+  return true;
 }
-*/
+
 function readValues(){
     itemSale.sku = document.getElementById('sku').value;
     itemSale.quantity = document.getElementById('quantity').value;
@@ -56,6 +56,10 @@ function getArticle() {
 function saveItemSale() {
 
   readValues();
+
+  if(!validateItemSale()) {
+      return;
+    }
 
   saveItemSaleHttp(itemSale, newRow);
 }
