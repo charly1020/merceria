@@ -29,7 +29,7 @@ function newRow(itemSale){
      '<td>' + itemSale.monto + '</td>'+
      '</tr>');
 }
-function validationDate(){
+function validateItemSale(){
   if(itemSale.sku == null || itemSale.sku == "") {
      alert("ingrese el sku");
      return false;
@@ -57,7 +57,7 @@ function saveItemSale() {
 
   readValues();
 
-  if(!validationDate()) {
+  if(!validateItemSale()) {
       return;
     }
 
