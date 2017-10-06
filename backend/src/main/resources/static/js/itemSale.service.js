@@ -22,6 +22,7 @@ function saveItemSaleHttp(itemSale,funcPromice) {
               alert("El Item de venta no se guardo")
            }
            itemSale= JSON.parse(itemSale1);
+
            funcPromice(itemSale);
 
         }

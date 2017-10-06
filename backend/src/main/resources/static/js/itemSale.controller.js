@@ -47,12 +47,16 @@ function readValues(){
     itemSale.description = articleResponse.description;
     itemSale.cost = articleResponse.cost;
     itemSale.price = articleResponse.price;
+
 }
 
 function getArticle() {
     getArticleServ(showArticle);
 }
+//function calculation(quantity, price){
+   //return = (parseInt(quantity) * parseInt(price))
 
+//}
 function saveItemSale() {
 
   readValues();

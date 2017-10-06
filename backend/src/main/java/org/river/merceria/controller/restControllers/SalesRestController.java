@@ -15,10 +15,10 @@ public class SalesRestController {
   private SalesRepository repository;
 
   @PostMapping("/sales")
-  public String addSales(@ModelAttribute Sales sales){
+  public Sales addSales(@ModelAttribute Sales sales){
     System.out.println(sales.toString());
     repository.save(sales);
-    return "sale";
+    return sales;
 
   }
 
