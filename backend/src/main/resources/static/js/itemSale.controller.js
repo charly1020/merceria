@@ -53,10 +53,7 @@ function readValues(){
 function getArticle() {
     getArticleServ(showArticle);
 }
-//function calculation(quantity, price){
-   //return = (parseInt(quantity) * parseInt(price))
 
-//}
 function saveItemSale() {
 
   readValues();
