@@ -15,7 +15,6 @@ public class ItemSale {
   private double cost;
   private double price;
   private double quantity;
-  /*private double monto;*/
 
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE , generator = "seq_gen")
@@ -67,20 +66,11 @@ public class ItemSale {
   public void setQuantity(double quantity) {
     this.quantity = quantity;
   }
-/*
-  public double getMonto() {
-    return monto;
-  }
-
-  public void setMonto(double monto) {
-    this.monto = monto;
-  }
-
 
   @Override
   public String toString(){
-    return String.format("ItemSale[sku='%s,description='%d, cost='%f, price='%f, quantity='%f, monto='%f]",
-        this.sku, this.description, this.cost, this.price, this.quantity, this.monto);
+    return String.format("ItemSale[sku='%s,description='%s, cost='%f, price='%f, quantity='%f]",
+        this.sku, this.description, this.cost, this.price, this.quantity);
   }
-  */
+
 }

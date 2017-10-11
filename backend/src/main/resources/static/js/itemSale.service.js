@@ -15,7 +15,6 @@ function saveItemSaleHttp(itemSale,funcPromice) {
         if(http.readyState == 4 && http.status == 200){
            console.log(http.responseText);
            var itemSale1 = http.responseText;
-
            if(itemSale1 != ''){
               alert("El Item de venta  se guardo")
            }else{

@@ -9,7 +9,6 @@ import javax.persistence.*;
 public class Sales {
 
   private Long id;
-  private float montoTotal;
 
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_gen")
@@ -22,17 +21,9 @@ public class Sales {
     this.id = id;
   }
 
-  public float getMontoTotal() {
-    return montoTotal;
-  }
-
-  public void setMontoTotal(float montoTotal) {
-    this.montoTotal = montoTotal;
-  }
-
   @Override
   public String toString(){
-    return String.format("Sales[id='%s, montoTotal='%f]",
-        this.id, this.montoTotal);
+    return String.format("Sales[id='%s]",
+        this.id);
   }
 }
