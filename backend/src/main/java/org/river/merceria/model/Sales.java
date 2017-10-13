@@ -1,6 +1,7 @@
 package org.river.merceria.model;
 
 import javax.persistence.*;
+import java.util.*;
 
 /**
  * Created by marina on 19/09/17.
@@ -21,9 +22,13 @@ public class Sales {
     this.id = id;
   }
 
+  private List<Sales> sales = new ArrayList<Sales>(){
+  };
+
   @Override
   public String toString(){
     return String.format("Sales[id='%s]",
         this.id);
   }
+
 }
