@@ -22,8 +22,7 @@ public class Sales {
     this.id = id;
   }
 
-  private List<Sales> sales = new ArrayList<Sales>(){
-  };
+  private List<Sales> sales = new ArrayList<Sales>();
 
   @Override
   public String toString(){
