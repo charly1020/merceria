@@ -90,7 +90,7 @@ public class Article{
     return cost;
   }
 
-  public void setCost(double costo) {
+  public void setCost(double cost) {
     this.cost = cost;
   }
 
