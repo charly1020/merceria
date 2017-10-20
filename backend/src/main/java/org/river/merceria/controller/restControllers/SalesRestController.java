@@ -15,7 +15,7 @@ public class SalesRestController {
   private SalesRepository repository;
 
   @PostMapping("/sales")
-  public Sales addSales(@ModelAttribute Sales sales){
+  public Sales addSales(@RequestBody Sales sales){
     System.out.println(sales.toString());
     repository.save(sales);
     return sales;
