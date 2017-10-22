@@ -1,3 +1,7 @@
 
 
 
+function saveSale() {
+
+    saveSaleInBknd(sales);
+}

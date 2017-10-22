@@ -10,6 +10,8 @@ import java.util.*;
 public class Sales {
 
   private Long id;
+  private String description;
+  private List<ItemSale> itemsale;
 
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_gen")
@@ -22,7 +24,22 @@ public class Sales {
     this.id = id;
   }
 
-  private List<Sales> sales = new ArrayList<Sales>();
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  @OneToMany(targetEntity=ItemSale.class, mappedBy="sales", fetch=FetchType.EAGER)
+  public List<ItemSale> getItemsale() {
+    return itemsale;
+  }
+
+  public void setItemsale(List<ItemSale> itemsale) {
+    this.itemsale = itemsale;
+  }
 
   @Override
   public String toString(){

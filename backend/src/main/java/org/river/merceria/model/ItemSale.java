@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by marina on 26/06/17.
  */
 // se refiere a la factura
-  @Entity
+@Entity
 public class ItemSale {
 
   private Long id;
@@ -15,6 +15,8 @@ public class ItemSale {
   private double cost;
   private double price;
   private double quantity;
+
+  private Sales sales;
 
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE , generator = "seq_gen")
@@ -65,6 +67,16 @@ public class ItemSale {
 
   public void setQuantity(double quantity) {
     this.quantity = quantity;
+  }
+
+  @ManyToOne
+  @JoinColumn(name="salesId")
+  public Sales getSales() {
+    return sales;
+  }
+
+  public void setSales(Sales sales) {
+    this.sales = sales;
   }
 
   @Override
