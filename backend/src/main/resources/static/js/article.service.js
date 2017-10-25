@@ -5,7 +5,7 @@
 
 function getArticleServ(funcPromise) {
   //Empieza Ajax (peticiones async)
-  //var http = new XMLHttpRequest();
+
   var sku = document.getElementById('sku').value;
   var url = "/articles" + "/" + sku;
 
@@ -15,5 +15,5 @@ function getArticleServ(funcPromise) {
            funcPromise(article1);
           }
     );
-
 }
+

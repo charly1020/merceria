@@ -14,14 +14,14 @@ function getArticles() {
         listArticle = data;
         clearArticleTable();
         for(var i=0; i < listArticle.length ; i++){
-            crearFilas(listArticle[i]);
+            createRows(listArticle[i]);
         }
 
    }
    )
 }
 
-function crearFilas(article) {
+function createRows(article) {
 
   $('#tblArticles tbody').append('<tr>' +
   '<td>' + article.sku +'</td>' +
@@ -71,3 +71,5 @@ function eliminarArticle(article){
 //delete article1['sku']
 $("sku").delete;
 }
+
+
