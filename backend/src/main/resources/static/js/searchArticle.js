@@ -25,7 +25,7 @@ function showArticle(article) {
   $(".typePro").remove();
   $("#articleTypeProd").append("<label class='typePro' >" + article.typeProd + "</label>")
 
-  $("pricParc").remove();
+  $(".pricParc").remove();
   $("#articlePriceParcial").append("<label class='pricParc' >" + article.priceParcial + "</label>")
 
   $(".desc").remove();

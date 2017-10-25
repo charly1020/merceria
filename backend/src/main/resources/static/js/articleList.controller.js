@@ -10,29 +10,18 @@ function getArticles() {
   var http = new XMLHttpRequest();
   var url = "/articles";
 
-   http.open("GET", url, true);
+   $.get(url, function(data){
+        listArticle = data;
+        clearArticleTable();
+        for(var i=0; i < listArticle.length ; i++){
+            createRows(listArticle[i]);
+        }
 
-    http.onreadystatechange = function() {//Call a function when the state changes.
-       if(http.readyState == 4 && http.status == 200) {
-         console.log(http.responseText);
-         var a = http.responseText;
-         if(a != '') {
-          listArticle = JSON.parse(a);
-
-          clearArticleTable();
-
-          for(var i=0; i < listArticle.length ; i++){
-           crearFilas(listArticle[i]);
-          }
-
-         }
-       }
-     }
-    //peticion real al backend
-   http.send();
+   }
+   )
 }
 
-function crearFilas(article) {
+function createRows(article) {
 
   $('#tblArticles tbody').append('<tr>' +
   '<td>' + article.sku +'</td>' +
@@ -82,3 +71,5 @@ function eliminarArticle(article){
 //delete article1['sku']
 $("sku").delete;
 }
+
+
