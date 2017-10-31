@@ -32,7 +32,7 @@ public class Sales {
     this.description = description;
   }
 
-  @OneToMany(targetEntity=ItemSale.class, mappedBy="sales", fetch=FetchType.EAGER)
+  @OneToMany(mappedBy = "sales", cascade = CascadeType.ALL)
   public List<ItemSale> getItemsale() {
     return itemsale;
   }
