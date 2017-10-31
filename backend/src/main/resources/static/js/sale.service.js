@@ -2,22 +2,11 @@
 
 function saveSaleInBknd(sales){
 
-  var http = new XMLHttpRequest();
+  //var http = new XMLHttpRequest();
   var url = "/sales";
-  var sales = {
-                description: "semana1",
-                itemsale: [
-                    {
-                        sku: "bla1",
-                        description: "prod 1",
-                        cost:12,
-                        price:24,
-                        quantity:3
-                        }
-                   ]
-              };
 
-  http.open('POST',url,true);
+
+  /*http.open('POST',url,true);
 
   http.setRequestHeader("Content-Type", "application/json");
 
@@ -36,7 +25,23 @@ function saveSaleInBknd(sales){
   }
 
   var saleAsString = JSON.stringify(sales);
-  http.send(saleAsString);
+  http.send(saleAsString);*/
+
+  sales = JSON.stringify(sales);
+
+  $.ajax({
+    type: "POST",
+    headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+    },
+    url: url,
+    data: sales,
+    success: function (data){
+                 sales = JSON.parse(sales);
+                 alert("la venta se guardo");
+               }
+  });
 
 }
 

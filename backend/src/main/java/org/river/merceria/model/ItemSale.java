@@ -70,7 +70,7 @@ public class ItemSale {
   }
 
   @ManyToOne
-  @JoinColumn(name="salesId")
+  @JoinColumn(name="sales_id")
   public Sales getSales() {
     return sales;
   }
