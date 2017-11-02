@@ -89,12 +89,12 @@ function validateArticle() {
 
 function saveArticleHttp() {
   //Empieza Ajax (peticiones async)
-  var http = new XMLHttpRequest();
+ // var http = new XMLHttpRequest();
   var url = "/article";
   var params = "sku=" + article.sku + '&' + "price=" + article.price + '&' + "quantity=" + article.quantity + '&' + "cost=" + article.cost + '&' + "typeProd=" + article.typeProd + '&' + "priceParcial=" + article.priceParcial + '&' + "description=" + article.description + '&' + "parcialCost=" + article.parcialCost;
 
   //le decis que metodo http estas invocando (POST-GET-DELETE-UPDATE)
-  http.open("POST", url, true);
+/* http.open("POST", url, true);
   //informa al backend que tipo de info se le esta mandando
   http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
@@ -110,5 +110,20 @@ function saveArticleHttp() {
   }
 }
   //peticion real al backend
-  http.send(params);
+  http.send(params);*/
+  var articleStr = JSON.stringify(article);
+
+  $.ajax({
+        type: "POST",
+        headers: {
+           'Accept': 'application/json',
+            'Content-Type': 'application/json'
+         },
+        url: url,
+        data: articleStr,
+        success: function(data){
+                        alert("El articulo se guardo correctamente.");
+         }
+  });
+
 }
