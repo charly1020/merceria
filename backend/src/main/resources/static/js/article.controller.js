@@ -96,13 +96,13 @@ function saveArticleHttp() {
   $.ajax({
         type: "POST",
         headers: {
-           'Accept': 'application/json',
-            'Content-Type': 'application/json'
-         },
+                  'Accept': 'application/json',
+                   'Content-Type': 'application/json'
+        },
         url: url,
         data: articleStr,
         success: function(data){
-                        alert("El articulo se guardo correctamente.");
+                       alert("El articulo se guardo correctamente.");
          }
   });
 
