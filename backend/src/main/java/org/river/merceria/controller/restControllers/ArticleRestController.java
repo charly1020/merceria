@@ -20,7 +20,7 @@ public class ArticleRestController {
   private ArticleRepository repository;
 
   @PostMapping("/article")
-  public String articleSubmit(@ModelAttribute Article article) {
+  public String articleSubmit(@RequestBody Article article) {
     System.out.println(article.toString());
     repository.save(article);
     return "result";

@@ -9,13 +9,15 @@ import java.util.*;
 @Entity
 public class Sales {
 
+  @Id
+  @GeneratedValue
   private Long id;
   private String description;
-  private List<ItemSale> itemsale;
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_gen")
-  @SequenceGenerator(name = "seq_gen", sequenceName = "id_seq_sales")
+  @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+  @JoinColumn(name = "sale_id")
+  private List<ItemSale> itemsale = new ArrayList<ItemSale>();
+
   public Long getId() {
     return id;
   }
@@ -32,7 +34,6 @@ public class Sales {
     this.description = description;
   }
 
-  @OneToMany(mappedBy = "sales", cascade = CascadeType.ALL)
   public List<ItemSale> getItemsale() {
     return itemsale;
   }

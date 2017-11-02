@@ -9,6 +9,9 @@ import javax.persistence.*;
 @Entity
 public class ItemSale {
 
+  //ORM - Objeto - Relacional - Mapping
+  @Id
+  @GeneratedValue
   private Long id;
   private String sku;
   private String description;
@@ -16,11 +19,6 @@ public class ItemSale {
   private double price;
   private double quantity;
 
-  private Sales sales;
-
-  @Id
-  @GeneratedValue(strategy = GenerationType.SEQUENCE , generator = "seq_gen")
-  @SequenceGenerator(name = "seq_gen" , sequenceName = "id_seq_ItemSales")
   public Long getId() {
     return id;
   }
@@ -67,16 +65,6 @@ public class ItemSale {
 
   public void setQuantity(double quantity) {
     this.quantity = quantity;
-  }
-
-  @ManyToOne
-  @JoinColumn(name="sales_id")
-  public Sales getSales() {
-    return sales;
-  }
-
-  public void setSales(Sales sales) {
-    this.sales = sales;
   }
 
   @Override

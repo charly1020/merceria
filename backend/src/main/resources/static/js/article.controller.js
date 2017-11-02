@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  //var myInput = document.getElementById('sku');
-  //myInput.value = "hola usuario, como estas?";
+
 });
 
 var article = {};
@@ -88,27 +87,23 @@ function validateArticle() {
 }
 
 function saveArticleHttp() {
-  //Empieza Ajax (peticiones async)
-  var http = new XMLHttpRequest();
+
   var url = "/article";
   var params = "sku=" + article.sku + '&' + "price=" + article.price + '&' + "quantity=" + article.quantity + '&' + "cost=" + article.cost + '&' + "typeProd=" + article.typeProd + '&' + "priceParcial=" + article.priceParcial + '&' + "description=" + article.description + '&' + "parcialCost=" + article.parcialCost;
 
-  //le decis que metodo http estas invocando (POST-GET-DELETE-UPDATE)
-  http.open("POST", url, true);
-  //informa al backend que tipo de info se le esta mandando
-  http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  var articleStr = JSON.stringify(article);
 
-  http.onreadystatechange = function() {//Call a function when the state changes.
-    if(http.readyState == 4 && http.status == 200) {
-      console.log(http.responseText);
-       var a = http.responseText;
-      if(a != '') {
-        alert("El articulo se guardo correctamente.");
-    } else {
-        alert("No se pudo guardar el articulo.");
-    }
-  }
-}
-  //peticion real al backend
-  http.send(params);
+  $.ajax({
+        type: "POST",
+        headers: {
+           'Accept': 'application/json',
+            'Content-Type': 'application/json'
+         },
+        url: url,
+        data: articleStr,
+        success: function(data){
+                        alert("El articulo se guardo correctamente.");
+         }
+  });
+
 }
