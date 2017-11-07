@@ -54,7 +54,7 @@ function deleteArticle(btn){
           console.log(http.responseText);
           var b = http.responseText;
           if(b != ''){
-          eliminarArticle(b);
+          deleteArticle(b);
             if(http.status == 200){
                 alert("el articulo se elimino")
             }else{
@@ -66,9 +66,8 @@ function deleteArticle(btn){
    }
    http.send();
 }
-function eliminarArticle(article){
+function deleteArticle(article){
 
-//delete article1['sku']
 $("sku").delete;
 }
 

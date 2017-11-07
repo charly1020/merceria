@@ -3,7 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 var itemSale = {};
+var itemSales = [];
 var articleResponse;
+var saleResponse;
+//var price = articleResponse.price;
+//var quantity = document.getElementById('quantity').value;
 
 function showArticle(article){
 
@@ -42,6 +46,7 @@ function validateItemSale(){
 }
 
 function readValues(){
+
     itemSale.sku = document.getElementById('sku').value;
     itemSale.quantity = document.getElementById('quantity').value;
     itemSale.description = articleResponse.description;
@@ -51,17 +56,32 @@ function readValues(){
 }
 
 function getArticle() {
+
     getArticleServ(showArticle);
+
+}
+function getAmount(price, quantity){
+//return result = (parseDouble(itemSale.price) * parseDouble(itemSale.quantity))
 }
 
 function saveItemSale() {
 
   readValues();
+  itemSales.push(itemSale);
 
   if(!validateItemSale()) {
       return;
     }
+    getAmount();
+    //clearSaleTable();
 
-  saveItemSaleHttp(itemSale, newRow);
+    newRow(itemSale);
+
+  return itemSale;
 }
+
+
+/*function clearSaleTable(){
+ $("tbody").find('tr').remove()
+}*/
 

@@ -6,7 +6,9 @@
 </head>
 <body>
   <p>Pagina Principal</p>
-
+  <form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+  </form>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
