@@ -4,7 +4,7 @@
 function saveItemSaleHttp(itemSale,funcPromice) {
 
     var url = "/itemSale";
-    var params = "sku=" + itemSale.sku + '&' + "description=" + itemSale.description + '&' + "cost=" + itemSale.cost + '&' + "price=" + itemSale.price  + '&' + "quantity=" + itemSale.quantity;
+    var params = "sku=" + itemSale.sku + '&' + "description=" + itemSale.description + '&' + "cost=" + itemSale.cost + '&' + "price=" + itemSale.price  + '&' + "quantity=" + itemSale.quantity + '&' + "monto=" + itemSale.monto;
 
     itemSale = JSON.stringify(itemSale);
 

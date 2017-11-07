@@ -20,14 +20,14 @@ public class ItemSaleRestController {
 
 
   @PostMapping("/itemSale")
-  public ItemSale newItemSale(@ModelAttribute ItemSale itemSale) {
+  public ItemSale newItemSale(@RequestBody ItemSale itemSale) {
     System.out.println(itemSale.toString());
     repository.save(itemSale);
     return itemSale;
 
   }
   @GetMapping(value="/itemSale", produces = MediaType.APPLICATION_JSON_VALUE)
-  public List<ItemSale> getItemSale(@PathVariable String sku){
+  public List<ItemSale> getItemSale(@RequestBody String sku){
 
     List<ItemSale> listaVenta = repository.findAll();
 
@@ -35,7 +35,7 @@ public class ItemSaleRestController {
   }
 
   @GetMapping(value="/itemSale/{sku}", produces = MediaType.APPLICATION_JSON_VALUE)
-  public ItemSale getSale(@PathVariable String sku){
+  public ItemSale getSale(@RequestBody String sku){
 
     ItemSale itemSale = repository.findBysku(sku);
 
