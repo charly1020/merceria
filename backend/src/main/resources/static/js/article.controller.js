@@ -93,11 +93,17 @@ function saveArticleHttp() {
 
   var articleStr = JSON.stringify(article);
 
+  //Based in this link
+  //https://docs.spring.io/spring-security/site/docs/current/reference/html/csrf.html
+  var token = $("meta[name='_csrf']").attr("content");
+  var header = $("meta[name='_csrf_header']").attr("content");
+
   $.ajax({
         type: "POST",
         headers: {
                   'Accept': 'application/json',
-                   'Content-Type': 'application/json'
+                   'Content-Type': 'application/json',
+                   'X-CSRF-TOKEN': token
         },
         url: url,
         data: articleStr,
