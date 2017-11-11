@@ -95,8 +95,8 @@ function saveArticleHttp() {
 
   //Based in this link
   //https://docs.spring.io/spring-security/site/docs/current/reference/html/csrf.html
-  var token = $("meta[name='_csrf']").attr("content");
-  var header = $("meta[name='_csrf_header']").attr("content");
+   var token = $("meta[name='_csrf']").attr("content");
+   var header = $("meta[name='_csrf_header']").attr("content");
 
   $.ajax({
         type: "POST",
