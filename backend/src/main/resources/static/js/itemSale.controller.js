@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 var itemSale = {};
 var itemSales = [];
 var articleResponse;
-var saleResponse;
+
 //var price = articleResponse.price;
 //var quantity = document.getElementById('quantity').value;
 
@@ -61,6 +61,7 @@ function getArticle() {
 
 }
 function getAmount(price, quantity){
+
 //return result = (parseDouble(itemSale.price) * parseDouble(itemSale.quantity))
 }
 
@@ -73,15 +74,10 @@ function saveItemSale() {
       return;
     }
     getAmount();
-    //clearSaleTable();
 
     newRow(itemSale);
 
   return itemSale;
 }
 
-
-/*function clearSaleTable(){
- $("tbody").find('tr').remove()
-}*/
 
