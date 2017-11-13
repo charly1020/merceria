@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class ArticleViewController {
 
-  @RequestMapping("/article/new")
+  @RequestMapping("/article/newArticle")
   public String greeting(@RequestParam(value="name", defaultValue="World") String name) {
 
-    return "new";
+    return "newArticle";
   }
   @RequestMapping("/article/list")
   public String list(@RequestParam(value="name", defaultValue="World") String name) {
