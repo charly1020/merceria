@@ -15,4 +15,9 @@ public class SaleViewController {
   public String Sales(@RequestParam(value="name", defaultValue = "World")String name){
     return "sale";
   }
+
+  @RequestMapping("/article/viewSales")
+  public String viewSales(@RequestParam(value = "name", defaultValue = "World")String name){
+  return "viewSales";
+  }
 }
