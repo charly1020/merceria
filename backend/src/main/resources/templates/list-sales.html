@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+
+  <title>Title</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+</head>
+<body>
+<div>
+  <a href="/home">Pagina Principal</a>
+</div>
+
+<div class="text-center">
+  <h1>Lista de ventas</h1>
+</div>
+<form>
+  <div class="container">
+    <div class="row justify-content-start">
+      <div class="col-sm-4">
+
+        <table id="tblviewSales" class="table table-bordered">
+          <thead>
+          <tr>
+            <th class="text-center">Codigo de la venta</th>
+            <th class="text-center">Descripcion</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr></tr>
+          </tbody>
+        </table>
+        <div>
+          <input type="button" value="Mostrar Ventas" class="btn btn-primary btn-md" onclick="getSales()"/>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</form>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+<script src="/js/sale.service.js"></script>
+<script src="/js/listSales.controller.js"></script>
+
+
+
+</body>
+</html>
+
