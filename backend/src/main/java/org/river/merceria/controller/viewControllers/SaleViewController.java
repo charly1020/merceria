@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class SaleViewController {
 
-  @RequestMapping("/article/sale")
-  public String Sales(){
+  @GetMapping("/sale/newSale")
+  public String createSale(){
     return "sale";
   }
 
-  @GetMapping("/article/viewSales")
-  public String viewSales(){
-  return "viewSales";
+  @GetMapping("/sale/list")
+  public String getSalesListView(){
+    return "list-sales";
   }
 }

@@ -1,6 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-
-});
 
 var listArticle = [];
 var article1 = [];
@@ -16,9 +13,7 @@ function getArticles() {
         for(var i=0; i < listArticle.length ; i++){
             createRows(listArticle[i]);
         }
-
-   }
-   )
+   })
 }
 
 function createRows(article) {

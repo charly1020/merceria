@@ -1,4 +1,5 @@
 
+var listSales = {};
 
 function saveSaleInBknd(sales){
 
@@ -21,6 +22,19 @@ function saveSaleInBknd(sales){
                  alert("la venta se guardo");
                }
   });
+}
+
+function getSalesServ(){
+    var http = new XMLHttpRequest();
+    var url = "/list";
+
+    $.get(url, function(data){
+        listSales = data;
+        clearTableSale();
+        for(var i=0; i < listSales.length ; i++){
+            newRowSales(listSales[i]);
+        }
+    })
 
 }
 

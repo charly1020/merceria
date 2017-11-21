@@ -1,9 +1,13 @@
 package org.river.merceria.controller.restControllers;
 
+import org.river.merceria.model.ItemSale;
 import org.river.merceria.model.Sales;
 import org.river.merceria.repository.SalesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * Created by marina on 21/09/17.
@@ -19,7 +23,14 @@ public class SalesRestController {
     System.out.println(sales.toString());
     repository.save(sales);
     return sales;
+  }
 
+  @GetMapping(value = "/list", produces = MediaType.APPLICATION_JSON_VALUE)
+  public List<Sales> getSale(){
+
+    List<Sales> salesList = repository.findAll();
+
+    return salesList;
   }
 
 }

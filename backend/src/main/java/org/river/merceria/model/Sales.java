@@ -44,8 +44,8 @@ public class Sales {
 
   @Override
   public String toString(){
-    return String.format("Sales[id='%s]",
-        this.id);
+    return String.format("Sales[id='%d, description='%s]",
+        this.id, this.description);
   }
 
 }
