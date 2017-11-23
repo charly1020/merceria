@@ -22,4 +22,7 @@ public class SaleViewController {
   public String getSalesListView(){
     return "list-sales";
   }
+
+  @GetMapping("/sales/{id}")
+  public  String detailSales(){return "salesDetail";}
 }

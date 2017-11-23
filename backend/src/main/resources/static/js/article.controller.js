@@ -7,7 +7,7 @@ var article = {};
 //refactorizar -> hacer que el codigo sea mas limpio y reutilizable.
 function saveArticle() {
 
-  leerValuesFromView();
+  readValuesFromView();
   showValuesFromView();
 
   if(!validateArticle()) {
@@ -17,7 +17,7 @@ function saveArticle() {
   saveArticleHttp();
 }
 
-function leerValuesFromView() {
+function readValuesFromView() {
 
     article.sku = document.getElementById('sku').value;
     article.price = document.getElementById('price').value;
