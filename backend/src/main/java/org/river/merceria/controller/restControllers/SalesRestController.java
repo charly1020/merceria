@@ -17,6 +17,7 @@ public class SalesRestController {
 
   @Autowired
   private SalesRepository repository;
+  private Sales sales;
 
   @PostMapping("/sales")
   public Sales addSales(@RequestBody Sales sales){
@@ -31,6 +32,13 @@ public class SalesRestController {
     List<Sales> salesList = repository.findAll();
 
     return salesList;
+  }
+  @GetMapping(value="/sales/Show", produces = MediaType.APPLICATION_JSON_VALUE)
+  public Sales getSales(@RequestBody String id){
+    Sales detailSale = repository.findById(id);
+
+    
+    return sales;
   }
 
 }

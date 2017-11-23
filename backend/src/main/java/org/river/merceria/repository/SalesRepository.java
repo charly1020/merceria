@@ -15,4 +15,6 @@ public interface SalesRepository extends CrudRepository<Sales, Long> {
  //Sales findBysku(String sku);
  List<Sales> findAll();
 
+ Sales findById(String id);
+
 }

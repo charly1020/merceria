@@ -9,20 +9,30 @@
   <form th:action="@{/logout}" method="post">
     <input type="submit" value="Sign Out"/>
   </form>
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="/home">Pagina Principal</a>
       </div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/article/newArticle">Nuevo Artículo</a></li>
+        <li class="active"><a href="/article/newArticle">Cargar Artículo</a></li>
         <li><a href="/article/list">Lista de Articulos</a></li>
         <li><a href="/article/searchArticle">Buscar Articulo</a></li>
         <li><a href="/sale/newSale">Nueva Venta</a></li>
         <li><a href="/sale/list">Lista de ventas</a></li>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/article/newArticle"><span class="glyphicon glyphicon-user" value="Sign Out"></span> Sign Up</a></li>
+        <li><a href="/article/newArticle"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
     </div>
   </nav>
+  <form th:action="@{/logout}" method="post">
+    <div>
+      <input type="submit" value="Sign Out" class="btn btn-warning"/>
+    </div>
+
+  </form>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"
