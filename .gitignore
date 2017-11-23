@@ -9,6 +9,11 @@ target
 **/node/
 **/node_modules/
 
+#eclipse
+.project
+.settings
+**/*.classpath
+
 
 
 # Elastic Beanstalk Files
