@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8"/>
   <title>Title</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-
+  <meta name="_csrf" th:content="${_csrf.token}"/>
+  <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
 </head>
 <body>
 
   <div>
     <a href="/home">Pagina Principal</a>
   </div>
+
   <div class="container">
 
-  <div class="text-center Semibold 36px bg-warning">
+    <div th:replace="fragments/header :: header"></div>
+
+
+    <div class="text-center Semibold 36px bg-warning">
     <h1>Lista de Articulos</h1>
   </div>
 
