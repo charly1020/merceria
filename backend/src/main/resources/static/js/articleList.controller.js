@@ -41,29 +41,27 @@ function deleteArticle(btn){
    var sku = btn.id;
    var http = new XMLHttpRequest();
    var url = "/article" + "/" + sku;
+   var token = $("meta[name='_csrf']").attr("content");
+   var header = $("meta[name='_csrf_header']").attr("content");
 
-   http.open("DELETE", url, true);
-
-   http.onreadystatechange = function(){
-          if(http.readyState == 4 && http.status == 200){
-          console.log(http.responseText);
-          var b = http.responseText;
-          if(b != ''){
-          deleteArticle(b);
+$.ajax({
+    type: "DELETE",
+    headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'X-CSRF-TOKEN': token
+    },
+    url: url,
+    data: btn.id,
+    succes: function(data){
             if(http.status == 200){
                 alert("el articulo se elimino")
             }else{
                 alert("el articulo no se pudo eliminar")
             }
-
-          }
-       }
-   }
-   http.send();
+        }
+});
 }
-function deleteArticle(article){
 
-$("sku").delete;
-}
 
 
