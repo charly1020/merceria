@@ -25,7 +25,7 @@ function createRows(article) {
   '<td>' + article.cost + '</td>' +
   '<td>' + article.typeProd + '</td>' +
   '<td>' + article.priceParcial + '</td>' +
-  '<td>' + article.category + '</td>' +
+  //'<td>' + article.category + '</td>' +
   '<td>' + article.description + '</td>' +
   '<td>' + article.parcialCost + '</td>' +
   '<td><input id="' + article.sku + '" type="button"  class="btn btn-primary" value="Eliminar"  onclick="deleteArticle(this)" /></td>'+

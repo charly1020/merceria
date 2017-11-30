@@ -1,59 +1,58 @@
   <!DOCTYPE html>
-  <html lang="en">
+  <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8"/>
     <title>title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
- <!-- <script>
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
 
-  </script>-->
   </head>
   <body>
-  <div>
-    <a href="/home">Pagina Principal</a>
-  </div>
   <div class="container">
+    <div th:replace="fragments/header :: header"></div>
     <div class="text-center Semibold 36px btn-success">
       <h1>Buscar Articulo</h1>
     </div>
 
-    <div class="form-group col-xs-6">
+    <div class="form-group "  style="font-size:30px;">
       <label for="sku">Ingrese el codigo del Articulo</label>
       <input type="text" class="form-control" id="sku" name="sku" placeholder="Codigo"/>
     </div>
+    <div class="form-group">
+      <input type="button" value="Buscar Articulo" class="btn btn-warning" onclick="getArticle()"/>
+    </div>
+
+    <div id="articlePrice" style="font-size:20px;">
+      <label>Precio de venta: </label>
+    </div>
+
+    <div id="articleQuantity"  style="font-size:20px;">
+      <label>Cantidad en stock: </label>
+    </div>
+
+    <div id="articleCost"  style="font-size:20px;">
+      <label>Costo del Articulo: </label>
+    </div>
+
+    <div id="articleTypeProd"  style="font-size:20px;">
+      <label>Tipo de producto:</label>
+    </div>
+
+    <div id="articlePriceParcial"  style="font-size:20px;">
+      <label>Precio Parcial del articulo: </label>
+    </div>
+
+    <div id="articleDescription"  style="font-size:20px;">
+      <label>Descripcion del articulo: </label>
+    </div>
+
+    <div id="articleParcialCost"  style="font-size:20px;">
+      <label>Precio por unidad/centimetros: </label>
+    </div>
   </div>
 
-  <div class="form-group col-xs-10">
-    <input type="button" value="Buscar Articulo" onclick="getArticle()"/>
-  </div>
 
-  <div id="articlePrice" class="container col-xs-10">
-    <label>Precio de venta: </label>
-  </div>
-
-  <div id="articleQuantity" class="container col-xs-10">
-    <label>Cantidad en stock: </label>
-  </div>
-
-  <div id="articleCost" class="container col-xs-10">
-    <label>Costo del Articulo: </label>
-  </div>
-
-  <div id="articleTypeProd" class="container col-xs-10">
-    <label>Tipo de producto:</label>
-  </div>
-
-  <div id="articlePriceParcial" class="container col-xs-10">
-    <label>Precio Parcial del articulo: </label>
-  </div>
-
-  <div id="articleDescription" class="container col-xs-10">
-    <label>Descripcion del articulo: </label>
-  </div>
-
-  <div id="articleParcialCost" class="container col-xs-10">
-    <label>Precio por unidad/centimetros: </label>
-  </div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"
           integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -63,7 +62,7 @@
           integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
           crossorigin="anonymous"></script>
   <script src="/js/article.service.js"></script>
-  <script src="/js/searchArticle.js"></script>
+  <script src="/js/searchArticle.controller.js"></script>
   </body>
 
   </html>

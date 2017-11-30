@@ -5,35 +5,26 @@
   <title>Title</title>
 </head>
 <body>
-  <p>Pagina Principal</p>
+  <div class="container">
+    <div th:replace="fragments/header :: header"></div>
+    <form th:action="@{/logout}" method="post">
+      <input type="submit" value="Sign Out" class="btn btn-warning"/>
+    </form>
+  </div>
 
-  <div th:replace="fragments/header :: header"></div>
 
-  <form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sign Out"/>
-  </form>
-  <nav class="navbar navbar-inverse">
+
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="/home">Pagina Principal</a>
+
       </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/article/newArticle">Cargar Artículo</a></li>
-        <li><a href="/article/list">Lista de Articulos</a></li>
-        <li><a href="/article/searchArticle">Buscar Articulo</a></li>
-        <li><a href="/sale/newSale">Nueva Venta</a></li>
-        <li><a href="/sale/list">Lista de ventas</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/article/newArticle"><span class="glyphicon glyphicon-user" value="Sign Out"></span> Sign Up</a></li>
-        <li><a href="/article/newArticle"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
+
     </div>
-  </nav>
+  <!--</nav>-->
   <form th:action="@{/logout}" method="post">
-    <div>
-      <input type="submit" value="Sign Out" class="btn btn-warning"/>
-    </div>
+    <!--<div>
+      <input type="submit" value="Sign Out" />
+    </div>-->
 
   </form>
 
