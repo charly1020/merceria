@@ -1,13 +1,8 @@
-document.addEventListener('DOMContentLoaded', function() {
 
-});
 
 var itemSale = {};
 var itemSales = [];
 var articleResponse;
-
-//var price = articleResponse.price;
-//var quantity = document.getElementById('quantity').value;
 
 function showArticle(article){
 
@@ -30,7 +25,7 @@ function newRow(itemSale){
      '<td>' + itemSale.cost + '</td>' +
      '<td>' + itemSale.price + '</td>' +
      '<td>' + itemSale.quantity + '</td>' +
-     '<td>' + itemSale.monto + '</td>'+
+     '<td>' + itemSale.amount + '</td>'+
      '</tr>');
 }
 function validateItemSale(){
@@ -61,21 +56,20 @@ function getArticle() {
 
 }
 function getAmount(price, quantity){
-
-//return result = (parseDouble(itemSale.price) * parseDouble(itemSale.quantity))
+  itemSale.amount = (parseFloat(itemSale.price) * parseFloat(itemSale.quantity))
 }
 
-function saveItemSale() {
+function addItemToTable() {
 
   readValues();
   itemSales.push(itemSale);
 
   if(!validateItemSale()) {
       return;
-    }
-    getAmount();
+   }
+   getAmount(itemSale.price, itemSale.quantity);
 
-    newRow(itemSale);
+   newRow(itemSale);
 
   return itemSale;
 }

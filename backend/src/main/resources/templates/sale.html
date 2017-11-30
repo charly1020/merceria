@@ -1,78 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8"/>
     <meta name="_csrf" th:content="${_csrf.token}"/>
-
     <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
 
     <title>Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
   </head>
   <body>
-      <div>
-        <a href="/home">Pagina Principal</a>
-      </div>
-      <div class="text-center Semibold 36px btn-info">
-        <h1> Nueva Venta </h1>
-      </div>
-      <form>
-        <div class="container">
-          <div class="row justify-content-start">
-            <div class="col-sm-4">
-              <label for="sku">Ingrese el codigo del articulo</label>
-              <input type="text" class="form-control" placeholder="Codigo" id="sku" name="sku"/>
-            </div>
-
-            <div class="col-sm-4">
-              <label for="quantity">Ingrese la cantidad</label>
-              <input type="text" class="form-control" placeholder="Cantidad Vendida" id="quantity" name="quantity"/>
-            </div>
-          </div>
-
-          <div class="row justify-content-around">
-            <div id="articleDescription" class="col-4">
-              <label>Descripcion del articulo: </label>
-            </div>
-            <div id="articleCost" class="col-4">
-              <label>Costo del Articulo: </label>
-            </div>
-            <div id="articlePrice" class="col-4" >
-              <label>Precio de venta: </label>
-            </div>
-          </div>
-
-          <div class="row justify-content-end">
-            <div class="col-sm-4">
-              <input type="button" value="Mostrar Articulo" class="btn btn-primary " onclick="getArticle()"/>
-            </div>
-            <div class="col-sm-4">
-              <input type="button" value="Agregar" class="btn btn-primary btn-md" onclick="saveItemSale()"/>
-            </div>
-          </div>
+  <div class="container">
+    <div th:replace="fragments/header :: header"></div>
+    <div class="text-center Semibold 36px btn-info">
+      <h1> Nueva Venta </h1>
+    </div>
+    <form>
+      <div class="well">
           <div class="row">
-            <table id="tbl2Sale" class="table table-bordered">
-              <thead>
-              <tr>
-                <th class="text-center">Codigo</th>
-                <th class="text-center">Descripcion</th>
-                <th class="text-center">Costo</th>
-                <th class="text-center">Precio</th>
-                <th class="text-center">Cantidad</th>
-                <th class="text-center">Monto</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr></tr>
-              </tbody>
-            </table>
-          </div>
-
+            <div class="col-md-4">
+              <div style="font-size:20px;">
+                <label for="sku">Ingrese el codigo del articulo</label>
+                <input type="text" class="form-control" placeholder="Codigo" id="sku" name="sku"/>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="col-sm-4">
+                <input type="button" value="Consultar" class="btn btn-primary " onclick="getArticle()"/>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div id="articleDescription" style="font-size:20px;">
+                <label>Descripcion del articulo: </label>
+              </div>
+              <div id="articleCost" style="font-size:20px;">
+                <label>Costo del Articulo: </label>
+              </div>
+              <div id="articlePrice" style="font-size:20px;">
+                <label>Precio de venta: </label>
+              </div>
+            </div>
         </div>
-      </form>
+      </div>
+
+      <div>
+        <div class="well">
+          <div class="row">
+
+            <div class="col-md-4">
+              <div style="font-size:20px;">
+                <label for="quantity">Ingrese la cantidad</label>
+                <input type="text" class="form-control" placeholder="Cantidad Vendida" id="quantity" name="quantity"/>
+              </div>
+            </div>
+              <div class="col-md-8">
+                <div class="col-sm-4">
+                  <input type="button" value="Agregar" class="btn btn-primary btn-md" onclick="addItemToTable()"/>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <table id="tbl2Sale" class="table table-bordered" style="font-size:20px;">
+            <thead>
+            <tr>
+              <th class="text-center">Codigo</th>
+              <th class="text-center">Descripcion</th>
+              <th class="text-center">Costo</th>
+              <th class="text-center">Precio</th>
+              <th class="text-center">Cantidad</th>
+              <th class="text-center">Monto</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
       <div class="col-sm-4">
         <input type="button" value="Save Sale" class="btn btn-primary btn-md" onclick="saveSale()"/>
       </div>
+    </form>
+  </div>
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"
               integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
               crossorigin="anonymous"></script>

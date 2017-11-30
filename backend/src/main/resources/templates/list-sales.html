@@ -1,42 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8"/>
-
+  <meta name="_csrf" th:content="${_csrf.token}"/>
+  <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
   <title>Title</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
 </head>
 <body>
-<div>
-  <a href="/home">Pagina Principal</a>
-</div>
 
-<div class="text-center">
-  <h1>Lista de ventas</h1>
-</div>
 <form>
   <div class="container">
+    <div th:replace="fragments/header :: header"></div>
+    <div class="text-center Semibold 36p btn-info" style="background-color:#3cb371;">
+      <h1>Lista de Ventas</h1>
+    </div>
+
+    <div class="text-center">
     <div class="row justify-content-start">
-      <div class="col-sm-4">
-        <table id="tblviewSales" class="table table-bordered">
+      <div class="col-sm-8">
+        <table id="tblviewSales" class="table table-bordered" style="font-size:20px;">
           <thead>
           <tr>
             <th class="text-center">Codigo de la venta</th>
             <th class="text-center">Descripcion</th>
-            <th class="text-center"> Ver</th>
+            <th class="text-center">Accion: </th>
           </tr>
           </thead>
           <tbody>
           </tbody>
         </table>
         <div>
-          <input type="button" value="Mostrar Ventas" class="btn btn-primary btn-md" onclick="getSales()"/>
+          <input type="button" value="Consultar Ventas" class="btn btn-primary btn-md" onclick="getSales()"/>
         </div>
 
       </div>
     </div>
 
+  </div>
   </div>
 </form>
 
