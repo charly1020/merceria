@@ -7,7 +7,7 @@
   <meta name="_csrf" th:content="${_csrf.token}"/>
   <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
 </head>
-<body>
+<body onload="getArticles()">
   <div class="container">
 
     <div th:replace="fragments/header :: header"></div>
@@ -37,9 +37,6 @@
       </tbody>
     </table>
 
-    <div>
-      <input type="button" value="Obtener Articulos" class="btn btn-warning" onclick="getArticles()"/>
-    </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"
           integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="

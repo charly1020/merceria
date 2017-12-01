@@ -20,7 +20,11 @@ function saveSaleInBknd(sales){
     success: function (data){
                  sales = JSON.parse(sales);
                  alert("la venta se guardo");
-               }
+               },
+    error: function(err) {
+        alert('No existe stock suficiente para realizar la venta.');
+        console.log(err);
+    }
   });
 }
 

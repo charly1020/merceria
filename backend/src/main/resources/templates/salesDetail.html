@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8"/>
+  <meta name="_csrf" th:content="${_csrf.token}"/>
+  <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
   <title>Title</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
 </head>
 <body onload="showGreeting()">
   <form>
-    <div>
-      <a href="/home">Pagina Principal</a>
-    </div>
     <div class="container">
-      <div class="row justify-content-start">
+      <div th:replace="fragments/header :: header"></div>
+      <div class="text-center Semibold 36p btn-info" style="background-color:#3cb371;">
+        <h1>Detalles de Ventas</h1>
+      </div>
         <div class="col-sm-4">
           <label for="sku">Detalles de la venta</label>
-          <input type="text" class="form-control" id="sku" name="sku" placeholder="detalle de la venta"/>
+          <input type="text" class="form-control" id="sku" name="sku" placeholder="Detalle de la Venta"/>
 
         </div>
 

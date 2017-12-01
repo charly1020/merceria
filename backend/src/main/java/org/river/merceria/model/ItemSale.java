@@ -73,4 +73,6 @@ public class ItemSale {
         this.sku, this.description, this.cost, this.price, this.quantity);
   }
 
+
+
 }

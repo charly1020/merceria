@@ -1,7 +1,10 @@
 package org.river.merceria.model;
 
+import antlr.collections.*;
+
 import javax.persistence.*;
 import java.util.*;
+import java.util.List;
 
 /**
  * Created by marina on 19/09/17.
@@ -47,5 +50,15 @@ public class Sales {
     return String.format("Sales[id='%d, description='%s]",
         this.id, this.description);
   }
+
+  /*public int makeSale(List<ItemSale> itemSales){
+
+    //for ( List<ItemSale> itemSales){
+    for (ItemSale is : itemSales){
+          is
+    }
+
+
+  }*/
 
 }

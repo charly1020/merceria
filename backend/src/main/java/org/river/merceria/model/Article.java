@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Article{
 
   private Long id;
-  private int quantity;
+  private double quantity;
   private String typeProd;
   private String description;
   private String category;
@@ -30,11 +30,11 @@ public class Article{
     this.id = id;
   }
 
-  public int getQuantity() {
+  public double getQuantity() {
     return quantity;
   }
 
-  public void setQuantity(int quantity) {
+  public void setQuantity(double quantity) {
     this.quantity = quantity;
   }
 
@@ -104,7 +104,7 @@ public class Article{
 
   @Override
   public String toString() {
-    return String.format("Article[quantity='%d, typeProd='%s, sku='%s, description='%s, category='%s, parcialCost=%f, priceParcial='%f, cost='%f, price='%f]",
+    return String.format("Article[quantity='%f, typeProd='%s, sku='%s, description='%s, category='%s, parcialCost=%f, priceParcial='%f, cost='%f, price='%f]",
         this.quantity, this.typeProd, this.sku, this.description, this.category, this.parcialCost, this.priceParcial, this.cost, this.price);
   }
   }
