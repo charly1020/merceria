@@ -19,8 +19,14 @@
           <li><a href="/sale/list">Lista de Ventas</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/article/newArticle"><span class="glyphicon glyphicon-user" value="Sign Out"></span> Sign Up</a></li>
-          <li><a href="/article/newArticle"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li sec:authorize="isAuthenticated()">
+            <form th:action="@{/logout}" method="post">
+              <input type="submit" value="Logout" class="btn btn-danger" style="margin-top:7px"/>
+            </form>
+          </li>
+          <li sec:authorize="!isAuthenticated()">
+              <a href="/article/list.html" class="btn btn-success">Login</a>
+          </li>
         </ul>
       </div>
     </nav>

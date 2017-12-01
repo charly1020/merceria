@@ -9,6 +9,7 @@ import java.util.List;
  * Created by marina on 4/8/17.
  * JDBC libreria
  * "select * "
+ * Esto genera una instancia que se guardaa en el container de spring
  */
 public interface ArticleRepository extends CrudRepository<Article, Long> {
 
