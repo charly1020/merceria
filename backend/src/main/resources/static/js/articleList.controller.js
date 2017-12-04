@@ -53,9 +53,9 @@ $.ajax({
     },
     url: url,
     data: btn.id,
-    succes: function(data){
+    success: function(data){
             if(http.status == 200){
-                alert("el articulo se elimino")
+                alert("el articulo se elimino");
             }else{
                 alert("el articulo no se pudo eliminar")
             }

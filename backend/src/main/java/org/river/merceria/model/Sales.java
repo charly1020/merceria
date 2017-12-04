@@ -51,14 +51,4 @@ public class Sales {
         this.id, this.description);
   }
 
-  /*public int makeSale(List<ItemSale> itemSales){
-
-    //for ( List<ItemSale> itemSales){
-    for (ItemSale is : itemSales){
-          is
-    }
-
-
-  }*/
-
 }

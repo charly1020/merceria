@@ -19,8 +19,4 @@ public interface ArticleRepository extends CrudRepository<Article, Long> {
 
     Article findBysku(String sku);
 
-    //ArticleDel delete(String sku);
-
- // @Override
-  //void delete(Long id);
 }
